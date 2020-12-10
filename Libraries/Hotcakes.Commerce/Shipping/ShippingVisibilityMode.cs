@@ -57,9 +57,15 @@ namespace Hotcakes.Commerce.Shipping
         TotalWeight = 4,
 
         /// <summary>
+        ///     The order subtotal must be less than the specified amount in order to be included in the shipping calculation
+        ///     and rate retrieval methods.
+        /// </summary>
+        SubtotalAmountLessThan = 5,
+
+        /// <summary>
         ///     The total weight of all line items must be less than the specified total in order to be included in the shipping
         ///     calculation and rate retrieval methods.
         /// </summary>
-        TotalWeightLessThan = 5
+        TotalWeightLessThan = 6
     }
 }

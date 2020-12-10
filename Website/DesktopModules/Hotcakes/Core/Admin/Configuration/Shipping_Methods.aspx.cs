@@ -212,6 +212,9 @@ namespace Hotcakes.Modules.Core.Admin.Configuration
                     case ShippingVisibilityMode.TotalWeightLessThan:
                         lb.Text = string.Format(Localization.GetString("TotalWeightLessThan"), sm.VisibilityAmount);
                         break;
+                    case ShippingVisibilityMode.SubtotalAmountLessThan:
+                        lb.Text = string.Format(Localization.GetString("SubtotalAmountLessThan"), sm.VisibilityAmount);
+                        break;
                 }
                 switch (sm.VisibilityModeSecondary)
                 {
@@ -223,6 +226,9 @@ namespace Hotcakes.Modules.Core.Admin.Configuration
                         break;
                     case ShippingVisibilityMode.TotalWeightLessThan:
                         lb.Text += string.Format(Localization.GetString("TotalWeightLessThanSecondary"), sm.VisibilityAmountSecondary);
+                        break;
+                    case ShippingVisibilityMode.SubtotalAmountLessThan:
+                        lb.Text += string.Format(Localization.GetString("SubtotalAmountLessThanSecondary"), sm.VisibilityAmountSecondary);
                         break;
                 }
             }
@@ -295,6 +301,7 @@ namespace Hotcakes.Modules.Core.Admin.Configuration
             lblMethodName.Text = item.Name;
 
             if (item.VisibilityMode == ShippingVisibilityMode.SubtotalAmount ||
+                item.VisibilityMode == ShippingVisibilityMode.SubtotalAmountLessThan ||
                 item.VisibilityMode == ShippingVisibilityMode.TotalWeight ||
                 item.VisibilityMode == ShippingVisibilityMode.TotalWeightLessThan)
             {
@@ -314,6 +321,7 @@ namespace Hotcakes.Modules.Core.Admin.Configuration
             }
 
             if (item.VisibilityModeSecondary == ShippingVisibilityMode.SubtotalAmount ||
+                item.VisibilityModeSecondary == ShippingVisibilityMode.SubtotalAmountLessThan ||
                 item.VisibilityModeSecondary == ShippingVisibilityMode.TotalWeight ||
                 item.VisibilityModeSecondary == ShippingVisibilityMode.TotalWeightLessThan)
             {
@@ -422,8 +430,14 @@ namespace Hotcakes.Modules.Core.Admin.Configuration
 
             var li6 = new ListItem
             {
+                Text = string.Format(Localization.GetString("SubtotalAmountLessThan"), string.Empty),
+                Value = ((int) ShippingVisibilityMode.SubtotalAmountLessThan).ToString()
+            };
+
+            var li7 = new ListItem
+            {
                 Text = string.Format(Localization.GetString("TotalWeightLessThan"), string.Empty),
-                Value = ((int) ShippingVisibilityMode.TotalWeightLessThan).ToString()
+                Value = ((int)ShippingVisibilityMode.TotalWeightLessThan).ToString()
             };
 
             list.Add(li);
@@ -432,6 +446,7 @@ namespace Hotcakes.Modules.Core.Admin.Configuration
             list.Add(li4);
             list.Add(li5);
             list.Add(li6);
+            list.Add(li7);
 
             ddlTypes.DataValueField = "Value";
             ddlTypes.DataTextField = "Text";
@@ -442,6 +457,7 @@ namespace Hotcakes.Modules.Core.Admin.Configuration
             listSecondary.Add(li4);
             listSecondary.Add(li5);
             listSecondary.Add(li6);
+            listSecondary.Add(li7);
 
             ddlTypes2.DataValueField = "Value";
             ddlTypes2.DataTextField = "Text";

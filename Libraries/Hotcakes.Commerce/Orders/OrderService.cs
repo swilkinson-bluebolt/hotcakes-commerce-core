@@ -298,6 +298,12 @@ namespace Hotcakes.Commerce.Orders
                         meetsCriteria = true;
                     }
                     break;
+                case ShippingVisibilityMode.SubtotalAmountLessThan:
+                    if (visibilityAmount.HasValue && order.TotalOrderAfterDiscounts < visibilityAmount.Value)
+                    {
+                        meetsCriteria = true;
+                    }
+                    break;
                 default:
                     meetsCriteria = true;
                     break;

@@ -147,6 +147,9 @@
   <data name="SubtotalAmount.Text" xml:space="preserve">
     <value>Subtotal &gt; {0}</value>
   </data>
+  <data name="SubtotalAmountLessThan.Text" xml:space="preserve">
+    <value>Subtotal &lt; {0}</value>
+  </data>
   <data name="TotalWeight.Text" xml:space="preserve">
     <value>Total Weight &gt; {0}</value>
   </data>
@@ -182,6 +185,9 @@
   </data>
   <data name="SubtotalAmountSecondary.Text" xml:space="preserve">
     <value> AND Subtotal &gt; {0}</value>
+  </data>
+  <data name="SubtotalAmountLessThanSecondary.Text" xml:space="preserve">
+    <value> AND Subtotal &lt; {0}</value>
   </data>
   <data name="TotalWeightLessThan.Text" xml:space="preserve">
     <value>Total Weight &lt; {0}</value>

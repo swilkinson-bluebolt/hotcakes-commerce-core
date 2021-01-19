@@ -320,8 +320,9 @@ namespace Hotcakes.Modules.Core.Admin.Marketing
                     {
                         lstNewQualification.Items.Add(new RadComboBoxItem(Localization.GetString("WhenUserIs"),
                             PromotionQualificationBase.TypeIdUserIs));
-                        lstNewQualification.Items.Add(new RadComboBoxItem(
-                            Localization.GetString("WhenUserPriceGroupIs"),
+                        lstNewQualification.Items.Add(new RadComboBoxItem(Localization.GetString("WhenUserIsInRole"),
+                            UserIsInRole.TypeIdString));
+                        lstNewQualification.Items.Add(new RadComboBoxItem(Localization.GetString("WhenUserPriceGroupIs"),
                             PromotionQualificationBase.TypeIdUserIsInGroup));
                         lstNewQualification.Items.Add(new RadComboBoxItem(Localization.GetString("AnyShippingMethod"),
                             PromotionQualificationBase.TypeIdAnyShippingMethod));

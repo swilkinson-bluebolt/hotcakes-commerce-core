@@ -447,6 +447,7 @@ namespace Hotcakes.Shipping.FedEx
                             : FedExConstants.LiveRateServiceUrl
                 };
 
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
                 var res = svc.getRates(req);
 
                 if (res.HighestSeverity == NotificationSeverityType.ERROR ||
